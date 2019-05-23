@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>GALLERY</title>
+    <link href='https://fonts.googleapis.com/css?family=Andika' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'>
+    <style>
+        .header {
+            top: 0;
+            margin: 0;
+            width: 100%;
+            height: auto;
+        }
+        .header-left {
+            width: 40%;
+            float: left;
+            padding: 25px;
+            margin: 0;
+        }
+        body, html {
+            height: 100%;
+            margin: 0;
+            background-color: #D6D6D6;
+        }
+        .bg1 {
+            position: relative;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-image: url("{% static "ieee/img15.png" %}");
+            min-height: 75%;
+        }
+        .caption {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            font-family: Andika;
+        }
+        .caption span.border {
+            background-color: grey;
+            padding: 15px;
+            color: white;
+            font-size: 46px;
+            letter-spacing: 10px;
+        }
+        h2 {
+            letter-spacing: 14px;
+            font-family: Actor;
+            color: #5F5F5F;
+            text-align: center;
+            font-size: 40px;
+        }
+        .gallery {
+            padding: 30px 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg1">
+        <div class="header">
+            <div class="header-left">
+                <a href="{% url 'index' %}"><img src="{% static "ieee/logo2.png" %}" style="width: 300px; height: 120px;"></a>
+            </div>
+        </div>
+        <div class="caption">
+            <span class="border">GALLERY</span>
+        </div>
+    </div>
+    <div class="posts">
+        <h2>IEEESJBIT GALLERY</h2>
+    </div>
+</body>
+</html>

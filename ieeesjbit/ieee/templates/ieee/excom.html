@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>EXCOM</title>
+    <link href='https://fonts.googleapis.com/css?family=Andika' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .header {
+            top: 0;
+            margin: 0;
+            width: 100%;
+            height: auto;
+        }
+        .header-left {
+            width: 40%;
+            float: left;
+            padding: 25px;
+            margin: 0;
+        }
+        body, html {
+            height: 100%;
+            margin: 0;
+            background-color: #D6D6D6;
+        }
+        .bg1 {
+            position: relative;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-image: url("{% static "ieee/img13.jpg" %}");
+            min-height: 75%;
+        }
+        .caption {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            font-family: Andika;
+        }
+        .caption span.border {
+            background-color: grey;
+            padding: 15px;
+            color: white;
+            font-size: 46px;
+            letter-spacing: 10px;
+        }
+        .excom {
+            padding: 30px 60px;
+            text-align: center;
+        }
+        h2 {
+            letter-spacing: 14px;
+            font-family: Actor;
+            color: #5F5F5F;
+            text-align: center;
+            font-size: 40px;
+        }
+        .container {
+            position: absolute;
+            width: 100%;
+            height: 350px;
+            max-width: 300px;
+        }
+        .image {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .overlay {
+            position: absolute; 
+            bottom: 0; 
+            background: rgb(0, 0, 0);
+            background: rgba(0, 0, 0, 0.5);
+            color: #f1f1f1; 
+            width: 100%;
+            transition: .5s ease;
+            opacity:0;
+            color: white;
+            font-size: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+        .container:hover .overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg1">
+        <div class="header">
+            <div class="header-left">
+                <a href="{% url 'index' %}"><img src="{% static "ieee/logo2.png" %}" style="width: 300px; height: 120px;"></a>
+            </div>
+        </div>
+        <div class="caption">
+            <span class="border">EXECUTIVE COMMITTEE</span>
+        </div>
+    </div>
+    <div class="excom">
+        <h2>EXCOM IEEESJBIT 2018</h2>
+        <div class="container">
+            <img src="{% static "ieee/img.jpg" %}" alt="example" class="image">
+            <div class="overlay">EXAMPLE</div>
+        </div>
+    </div>
+</body>
+</html>

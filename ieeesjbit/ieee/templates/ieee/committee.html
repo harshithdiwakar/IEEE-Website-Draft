@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Committee</title>
+    <link href='https://fonts.googleapis.com/css?family=Alef' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Amiko' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Asul' rel='stylesheet'>
+    <style type="text/css">
+    	* {
+    		box-sizing: border-box;
+    	}
+    	.header {
+            width: 100%;
+            height: 130px;
+            align-content: center;
+        }
+        .hleft {
+            float: left;
+            width: 50%;
+            height: 130px;
+            padding: 15px;
+            text-align: right;
+            color: #1D3EB9;
+            font-size: 200px;
+            font-family: Alef;
+        }
+        .member {
+            width: 60%;
+            height: auto;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border: solid 3px #8A8A8A;
+        }
+        th {
+            font-size: 28px;
+        }
+        th, td {
+            text-align: left;
+            padding: 15px;
+            font-weight: bold;
+            font-family: Amiko;
+            border: solid 1px #8A8A8A;
+            opacity: 1;
+        }
+        tr:nth-child(even) {
+            background-color: #D4D4D4;
+            opacity: 1;
+        }
+        .footer {
+			width: 100%;
+            margin: 0;
+            left: 0;
+            top: 50%;
+            background-color: #111;
+            height: 230px;
+            padding: 10px;
+            text-align: center;
+		}
+        a {
+            font-size: 30px;
+            font-family: Asul;
+            text-decoration: none;
+        }
+        a:hover {
+            color: red;
+        }
+        .bground{
+            background-image: url("{% static "ieee/sjbit.jpg" %}");
+            min-height: 500px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            opacity: 0.6;
+            color: black;
+        }
+        button {
+            background-color: #5F5C5C;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 26px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: #6B6B6B;
+        }
+    </style>
+</head>
+<body>
+    <div class="bground">
+        <div class="header">
+            <div class="hleft" align="right">
+                <h1 style="font-size:3vw;">CORE COMMITTEE</h1>
+            </div>
+        </div>
+        <hr>
+        <br>
+        <center>
+            <div class="member">
+                <h2 align="left" style="font-family: Amiko;">COORDINATORS:</h2>
+                <table>
+                    <tr>
+                        <th>NAME</th>
+                        <th>DESIGNATION</th>
+                        <th>DEPARTMENT</th>
+                    </tr>
+                    <tr>
+                        <td>Dr. Mamtha Mahesh Gowda</td>
+                        <td>Professor</td>
+                        <td><b>EEE</b></td>
+                    </tr>
+                    <tr>
+                        <td>Ajay B N</td>
+                        <td>Associate Professor</td>
+                        <td><b>CSE</b></td>
+                    </tr>
+                    <tr>
+                        <td>Chetna R</td>
+                        <td>Associate Professor</td>
+                        <td><b>ECE</b></td>
+                    </tr>
+                    <tr>
+                        <td>Uday Shankar S V</td>
+                        <td>Assistant Professor</td>
+                        <td><b>ISE</b></td>
+                    </tr>
+                </table>
+                <h2 align="left" style="font-family: Amiko;">MEMBERS:</h2>
+                <table>
+                    <tr>
+                        <th>NAME</th>
+                        <th>BRANCH</th>
+                        <th>SEMESTER</th>
+                    </tr>
+                    {% for member in members %}
+                    <tr>
+                        <td>{{ member.name }}</td>
+                        <td>{{ member.branch }}</td>
+                        <td>{{ member.sem }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <br>
+            <br>
+            <a href="{% url 'index' %}"><button type="button"><-HOME</button></a>
+        </center>
+        <br>
+        <br>
+    </div>
+    <div class="footer">
+        <br>
+        {% for info in general %}
+        <pre style="font-size: 22px">
+            For any information, contact:
+                                        {{ info.phone }}
+                                        {{ info.email }}
+        </pre>
+        {% endfor %}
+    </div>
+</body>
+</html>

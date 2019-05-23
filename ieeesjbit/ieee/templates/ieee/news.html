@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>NEWS</title>
+    <link href='https://fonts.googleapis.com/css?family=Andika' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Encode Sans Expanded' rel='stylesheet'>
+    <style>
+        .header {
+            top: 0;
+            margin: 0;
+            width: 100%;
+            height: auto;
+        }
+        .header-left {
+            width: 40%;
+            float: left;
+            padding: 25px;
+            margin: 0;
+        }
+        body, html {
+            height: 100%;
+            margin: 0;
+            background-color: #D6D6D6;
+        }
+        .bg1 {
+            position: relative;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-image: url("{% static "ieee/img.jpg" %}");
+            min-height: 75%;
+        }
+        .caption {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            font-family: Andika;
+        }
+        .caption span.border {
+            background-color: grey;
+            padding: 15px;
+            color: white;
+            font-size: 46px;
+            letter-spacing: 10px;
+        }      
+        h2 {
+            letter-spacing: 14px;
+            font-family: Actor;
+            color: #5F5F5F;
+            text-align: center;
+            font-size: 40px;
+        }
+        .news_items {
+            padding: 30px 60px;
+            text-align: left;
+        } 
+        ul {
+            padding: 30px 60px 60px 300px;
+            list-style-type: square;
+        }
+        li {
+            padding: 20px;
+            font-size: 25px;
+            font-family: Encode Sans Expanded;
+        }
+        .footer {
+            width: 100%;
+            margin: 0;
+            left: 0;
+            top: 50%;
+            background-color: #111;
+            height: auto;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg1">
+        <div class="header">
+            <div class="header-left">
+                <a href="{% url 'index' %}"><img src="{% static "ieee/logo2.png" %}" style="width: 300px; height: 120px;"></a>
+            </div>
+        </div>
+        <div class="caption">
+            <span class="border">NEWS & ANNOUNCEMENTS</span>
+        </div>
+    </div>
+    <div class="news_iems">
+        <h2>NEWSLETTER</h2>
+        <ul>
+        {% for item in news%}
+        <li>{{ item.news_item }}</li>
+        {% endfor %}
+        </ul>
+        <hr>
+        <h2>ANNOUNCEMENTS</h2>
+        <ul>
+            {% for a in announce %}
+            <li>{{ a.announcement }}</li>
+            {% empty %}
+            <pre style="font-family: Alef;font-size: 26px;"">NO ANNOUNCEMENTS</pre>
+            {% endfor %}
+        </ul>
+    </div>
+    <!--<div class="footer">
+        <h2 style="font-size:18px; letter-spacing: 0; color: white;">Take part in events and seminars by making registrations, <a href="#">click here</a>.</h2>
+    </div>-->
+</body>
+</html>

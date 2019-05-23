@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>EVENTS</title>
+    <link href='https://fonts.googleapis.com/css?family=Andika' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Alef' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Ruluko' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Share' rel='stylesheet'>
+    <style>
+        .header {
+            top: 0;
+            margin: 0;
+            width: 100%;
+            height: auto;
+        }
+        .header-left {
+            width: 40%;
+            float: left;
+            padding: 25px;
+            margin: 0;
+        }
+        .header-right { 
+            margin: 0;
+            float: right;
+            width: 40%;
+            top: 0;
+            height: auto;
+        }
+        body, html {
+            height: 100%;
+            margin: 0;
+            background-color: #D6D6D6;
+        }
+        .bg1 {
+            position: relative;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-image: url("{% static "ieee/img4.jpg" %}");
+            min-height: 75%;
+        }
+        .caption {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            font-family: Andika;
+        }
+        .caption span.border {
+            background-color: grey;
+            padding: 15px;
+            color: white;
+            font-size: 46px;
+            letter-spacing: 10px;
+        }      
+        h2 {
+            letter-spacing: 14px;
+            font-family: Actor;
+            color: #5F5F5F;
+            text-align: center;
+            font-size: 40px;
+        }
+        .event {
+            padding: 30px 60px;
+            text-align: justify;
+            text-align: center;
+            font-size: 30px;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+        }
+        .image {
+            opacity: 1;
+            display: block;
+            width: 100%;
+            height: 500px;
+            transition: 0.5s ease;
+            backface-visibility: hidden;
+        }
+        .photos {
+            top: 0;
+            margin: 0;
+            width: 100%;
+            height: auto;
+        }
+        .photos-left {
+            width: 48%;
+            float: left;
+            height: 500px;
+            padding: 15px 15px;
+        }
+        .photos-right {
+            width: 48%;
+            top: 0;
+            float: right;
+            height: 500px;
+            padding: 15px 15px;
+
+        }
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        .container:hover .image {
+            opacity: 0.3;
+        }
+        .container:hover .middle {
+            opacity: 1;
+        }
+        .text {
+            background-color: #5F5F5F;
+            color: white;
+            font-size: 20px;
+            padding: 16px 32px;
+            font-family: Andika;
+        }
+        ul {
+            padding: 30px 60px 60px 300px;
+            list-style-type: square;
+        }
+        li {
+            padding: 20px;
+            font-size: 36px;
+            font-family: Ruluko;
+        }
+        .button {
+  			display: inline-block;
+  			border-radius: 4px;
+  			background-color: #5F5C5C;
+  			border: none;
+  			color: #FFFFFF;
+  			text-align: center;
+  			font-size: 28px;
+            font-family: Andika;
+  			padding: 20px;
+  			width: 200px;
+  			transition: all 0.5s;
+  			cursor: pointer;
+  			margin: 5px;
+		}
+		.button span {
+  			cursor: pointer;
+  			display: inline-block;
+  			position: relative;
+  			transition: 0.5s;
+		}
+		.button span:after {
+  			content: '\00bb';
+  			position: absolute;
+  			opacity: 0;
+  			top: 0;
+  			right: -20px;
+  			transition: 0.5s;
+		}
+		.button:hover span {
+ 			 padding-right: 25px;
+		}
+		.button:hover span:after {
+  			opacity: 1;
+  			right: 0;
+		}
+        .footer {
+            width: 100%;
+            margin: 0;
+            left: 0;
+            top: 50%;
+            background-color: #111;
+            height: auto;
+            padding: 10px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg1">
+        <div class="header">
+            <div class="header-left">
+                <a href="{% url 'index' %}"><img src="{% static "ieee/logo2.png" %}" style="width: 300px; height: 120px;"></a>
+            </div>
+        </div>
+        <div class="caption">
+            <span class="border">EVENTS</span>
+        </div>
+    </div>
+    <div class="event">
+        <h2>EVENTS HOSTED BY IEEESJBIT</h2>
+        <div class="photos">
+            <div class="photos-left">
+                <div class="container">
+                    <img src="{% static "ieee/img9.jpg" %}" class="image">
+                    <div class="middle">
+                        <div class="text">
+                            EVENT1<br>YEAR
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="photos-right">
+                <div class="container">
+                    <img src="{% static "ieee/img10.jpg" %}" class="image">
+                    <div class="middle">
+                        <div class="text">
+                            EVENT2<br>YEAR
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="photos">
+            <div class="photos-left">
+                <div class="container">
+                    <img src="{% static "ieee/img11.png" %}" class="image">
+                    <div class="middle">
+                        <div class="text">
+                            EVENT3<br>YEAR
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="photos-right">
+                <div class="container">
+                    <img src="{% static "ieee/img12.jpg" %}" class="image">
+                    <div class="middle">
+                        <div class="text">
+                            EVENT4<br>YEAR
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+    <div class="events" style="text-align: left;">
+        <h2 style="font-size: 44px;">UPCOMING EVENTS</h2>
+        <ul>
+            {% for e in event %}
+            <li>
+                {{ e.event_name }}<br>
+                <u><pre>EVENT DATE</u>:</pre> {{ e.event_date }}<br>
+                <u><pre>ABOUT</u>:</pre> {{ e.event_description }}
+            </li>
+            <a href="#"><button class="button" style="vertical-align:middle"><span>REGISTER</span></button></a>
+            <hr>
+            {% empty %}
+            <pre style="font-family: Alef;font-size: 26px;">&#8855 NO UPCOMING EVENTS NOW.</pre>
+            {% endfor %}
+        </ul>        
+    </div>
+    <div class="footer">
+        <pre style="font-size: 30px; color: white; font-family: Andika;">
+            For further information, contact us:
+            {% for info in general %}
+            &#128222; {{ info.phone }}
+            {{ info.email }}
+            {% endfor %}
+        </pre>
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <style>
+        .register {
+            width: 50%;
+            box-sizing: border-box;
+            padding: 5px;
+
+        }
+    </style>
+</head>
+<body>
+    <form action="{% url 'index' %}" method="post">
+        {% form.as_p %}
+        <input type="submit" value="REGISTER">
+    </form>
+</body>
+</html>

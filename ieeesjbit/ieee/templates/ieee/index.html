@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>IEEE SJBIT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Andika' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Paprika' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Alef' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .header {
+            top: 0;
+            margin: 0;
+            width: 100%;
+            height: auto;
+        }
+        .header-left {
+            width: 40%;
+            float: left;
+            padding: 25px;
+            margin: 0;
+        }
+        .header-right { 
+            margin: 0;
+            float: right;
+            width: 50%;
+            top: 0;
+            height: auto;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow: hidden;
+            border-bottom: solid 1px;
+        }
+        li {
+            float: right;
+        }
+        li a {
+            display: block;
+            color: black;
+            font-family: Andika;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        li a:hover {
+            background-color: black;
+            text-decoration: none;
+            color: white;
+        }
+        .active {
+            display: block;
+            background-color: black;
+            color: white;
+        }
+        body, html {
+            height: 100%;
+            margin: 0;
+            background-color: #D6D6D6;
+        }
+        .bg1, .bg2, .bg3 {
+            position: relative;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 100%;
+            height: auto;
+            background-size: cover;
+        }
+        .bg1 {
+            background-image: url("{% static "ieee/img5.jpg" %}");
+            min-height: 85%;
+        }
+        .bg2 {
+            background-image: url("{% static "ieee/img7.jpg" %}");
+            min-height: 600px;
+        }
+        .bg3 {
+            background-image: url("{% static "ieee/img3.jpg" %}");
+            min-height: 600px;
+        }
+        .caption {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            font-family: Andika;
+        }
+        .caption span.border {
+            background-color: grey;
+            padding: 15px;
+            color: white;
+            font-size: 46px;
+            letter-spacing: 10px;
+        }
+        .info {
+            padding: 30px 60px;
+            text-align: justify;
+            text-align: center;
+            font-size: 30px;
+        }
+        h1, h2 {
+            letter-spacing: 14px;
+            font-family: Actor;
+            color: #5F5F5F;
+            font-size: 1.5vw;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3vw;
+        }
+        #footer {
+            width: 100%;
+            margin: 0;
+            left: 0;
+            top: 50%;
+            background-color: #111;
+            height: auto;
+            padding: 10px 0;
+            text-align: center;
+        }
+        #footer a{
+            text-decoration:none;
+        }
+        .fa {
+            padding: 20px;
+            font-size: 30px;
+            width: 30px;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 2px;
+            border-radius: 50%;
+        }
+        .fa:hover {
+            opacity: 0.7;
+        }
+        .fa-facebook {
+            background: #3B5998;
+            color: white;
+        }
+        .fa-twitter {
+            background: #55ACEE;
+            color: white;
+        }
+        .fa-linkedin {
+            background: #007bb5;
+            color: white;
+        }
+        pre {
+        font-family: Paprika;
+        font-size: 1.8vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg1">
+        <div class="caption">
+            <span class="border">EXELLENCE</span>
+        </div>
+        <div class="header">
+            <div class="header-left">
+                <img src="{% static "ieee/logo2.png" %}" style="width: 450px; height: 150px;">
+            </div>
+            <div class="header-right">
+                <ul>
+                    <li><a class="active" href="#">JOIN IEEE</a></li>
+                    <li><a onclick="contact()">Contact</a></li>
+                    <!--<li><a href="{% url 'committee' %}">Committee</a></li>-->
+                    <li><a href="{% url 'news' %}">News</a></li>
+                    <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                    <li><a href="{% url 'events' %}">Events</a></li>
+                    <li><a href="{% url 'excom' %}">Excom</a></li>
+                    <li><a href="{% url 'posts' %}">Posts</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                </ul>         
+            </div>
+        </div>
+    </div>
+    <div class="info">
+        <h1>IEEE</h1>
+        <pre>
+IEEE offers you a wide range of benefits, attend seminars, 
+conferences and participate in events for a wider exposure.
+Become a member of IEEE and shape your tomorrow, today.
+        </pre>
+    </div>   
+    <div class="bg2">
+        <div class="caption">
+            <span class="border">EMINENECE</span>
+        </div>
+    </div>            
+    <div class="info">
+            <h1>SJBIT</h1>
+            <pre>
+SJBIT has established a firm base to blossom
+its IEEE family within, creating an environment
+for winners, and for students to help dream and 
+make it their reality.
+            </pre>
+    </div>
+    <div class="bg3">
+        <div class="caption">
+            <span class="border">EDUCATE</span>
+        </div>
+    </div>
+    <div class="info">
+        <h1>EVENTS</h1>
+        <pre>
+There are various types of events that are conducted.
+Take part in these events to learn something new everytime.
+Attend seminars about topics you are interested in.
+Take part in conferences to voice your thoughts. Compete with
+others in many competitions that will be held.
+<a href="{% url 'events' %}" style="text-decoration:none;">Click here</a>, to view IEEE events conducted by SJBIT.
+        </pre>
+    </div>
+    <div id="footer">
+        <h2>CONNECT WITH US ON:</h2>
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-linkedin"></a>
+        <h2>CONTACT US: <br>
+        {% for info in general %}
+            &#128222; {{ info.phone }}<br>
+            {{ info.email }}
+        </h2>
+        {% endfor %}
+        <br>
+        <h2>LINKS:</h2>
+        <a href="http://sjbit.edu.in"><p style="font-family:Andika; font-size:1.5vw; color:#5F5F5F;">sjbit.edu.in</p></a>
+        <a href="https://www.ieeer10.org/"><p style="font-family:Andika; font-size: 1.5vw; color:#5F5F5F; padding: 0;">www.ieeer10.org</p></a>
+        <span style="color: white; font-size:1vw;">&#169; SJBIT IEEE</span>
+    </div>
+    <script>
+        function contact() {
+            var element = document.getElementById("footer");
+            element.scrollIntoView();
+        }
+    </script>
+</body>
+</html>
